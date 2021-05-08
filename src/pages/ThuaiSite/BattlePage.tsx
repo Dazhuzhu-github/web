@@ -246,13 +246,18 @@ const BattlePage: React.FC = () => {
       const response = await axios.get(`room/${record.room_id}`, {
         responseType: "blob",
       });
+<<<<<<< HEAD
       FileSaver.saveAs(response.data, record.room_id + ".thuaipb");
+=======
+      FileSaver.saveAs(response.data, record.created_at);
+>>>>>>> 2761e6c07b0269fe7d82db25238e45f31f4dcec8
     } catch (e) {
       const err = e as AxiosError;
       if (err.response?.status === 401) {
         message.error("认证失败");
       } else {
         message.error("未知错误");
+<<<<<<< HEAD
       }
     }
   };
@@ -281,8 +286,10 @@ const BattlePage: React.FC = () => {
           message.error("发起对战失败");
           console.log(e);
         }
+=======
+>>>>>>> 2761e6c07b0269fe7d82db25238e45f31f4dcec8
       }
-    })();
+    }
   };
   //点击发起对战
   const fight2 = () => {
